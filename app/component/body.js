@@ -1,32 +1,29 @@
-"use client"
-import React, { useEffect } from 'react'
+"use client";
+import React, { useEffect } from "react";
 export default function body() {
-
-  
   useEffect(() => {
     function handleGclick(event) {
-      
       if (event.target.tagName === "g") {
         const clickedGId = event.target.getAttribute("id"); // Corrected typo
         console.log(`clicked g element with id: ${clickedGId}`);
       }
     }
-  
+
     document.addEventListener("click", handleGclick);
-  
+
     return () => {
       document.removeEventListener("click", handleGclick);
     };
   }, []);
-  
+
   return (
-    <div className='flex flex-col gap-8  justify-center items-center w-full md:flex-row  text-slate-200 '>
-    <svg 
+    <div className="flex flex-col gap-8  justify-center items-center w-full md:flex-row  text-slate-200 ">
+      <svg
         height="100%"
         viewBox="0 0 673 1200"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className='w-4/12' 
+        className="w-4/12"
       >
         <g class="body-map__muscle" id="abdominals">
           <path
@@ -1166,7 +1163,7 @@ export default function body() {
         viewBox="0 0 652 1200"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className='w-4/12'
+        className="w-4/12"
       >
         <g id="hamstrings" class="body-map__muscle">
           <path
@@ -2084,8 +2081,7 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-      </svg> 
-    
+      </svg>
     </div>
-  )
+  );
 }
