@@ -3,6 +3,7 @@ import './globals.css'
 import "@fortawesome/fontawesome-svg-core"
 import {config} from "@fortawesome/fontawesome-svg-core"
 import Nav from "@/app/component/Nav"
+import PrelineScript from "./components/PrelineScript";
 config.autoAddCss=false;
 
 
@@ -25,7 +26,7 @@ export default function RootLayout({ children }) {
      
       </body>
 
-      
+      <PrelineScript />
     </html>
   )
 }
