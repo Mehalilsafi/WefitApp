@@ -1,21 +1,10 @@
 "use client";
 import React, { useEffect } from "react";
 export default function body() {
-  useEffect(() => {
-    function handleGclick(event) {
-      if (event.target.tagName === "g") {
-        const clickedGId = event.target.getAttribute("id"); // Corrected typo
-        console.log(`clicked g element with id: ${clickedGId}`);
-      }
-    }
-
-    document.addEventListener("click", handleGclick);
-
-    return () => {
-      document.removeEventListener("click", handleGclick);
-    };
-  }, []);
-
+  function handleClick(event){
+    const clikedId=event.currentTarget.id
+    console.log("the muscle ckiked Id : ",clikedId)
+  }
   return (
     <div className="flex flex-col gap-8  justify-center items-center w-full md:flex-row  text-slate-200 ">
       <svg
@@ -25,7 +14,7 @@ export default function body() {
         xmlns="http://www.w3.org/2000/svg"
         className="w-4/12"
       >
-        <g class="body-map__muscle" id="abdominals">
+        <g class="body-map__muscle" id="abdominals" onClick={handleClick} >
           <path
             d="M384.32 490.61C386.41 457.79 388.65 408.87 388.74 397.67C388.79 
         392.09 388.67 389.6 388.58 387.74L388.56 387.35C388.5 385.83 388.44 384.62 
