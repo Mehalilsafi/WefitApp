@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root {
+    /* Define your CSS variables */
+    --color-primary: #181818;
+    --color-secondary: #A2FF86;
+    --color-accent:#DDDDDD ;
+    --color-four:#F9F9F9
+  }
