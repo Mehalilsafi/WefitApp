@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default function Hero() {
+export default function Hero({params}) {
+  const {muscleId}=params;
     const exoTypeData=["bar","faDumbbell","Cable"];
   return (
     <div className='mr-7 ml-7'>

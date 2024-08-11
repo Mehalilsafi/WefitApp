@@ -1,10 +1,12 @@
 "use client";
-import { Handjet } from "next/font/google";
 import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
 export default function body() {
+  const router=useRouter()
   function handleClick(event){
-    const clikedId=event.currentTarget.id
-    console.log("the muscle ckiked Id : ",clikedId)
+    const muscleId=event.currentTarget.id
+    router.push(`/${muscleId}`)
+    console.log("the muscle ckiked Id : ",muscleId)
   }
   return (
     <div className="flex flex-col gap-8  justify-center items-center w-full md:flex-row  text-slate-200 ">

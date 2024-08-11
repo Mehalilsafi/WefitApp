@@ -1,9 +1,9 @@
 import React from 'react'
 import Hero from './components/Hero'
-export default function page() {
+export default function page({params}) {
   return (
     <div className=''>
-        <Hero/>
+        <Hero params={params}/>
     </div>
   )
 }
