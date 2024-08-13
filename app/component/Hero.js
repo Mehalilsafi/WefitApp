@@ -10,6 +10,7 @@ import TextBox from "./TextBox";
 export default function Hero() {
   const [isMale, setGander] = useState(false);
   const [isBeginner, setDuffeclty] = React.useState(false);
+  console.log("dUFFECLTY",isBeginner)
   return (
     <div className="ml-4 mr-4">
       <div className="flex w-full gap-4 items-center justify-center">

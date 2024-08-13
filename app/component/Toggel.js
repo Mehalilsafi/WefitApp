@@ -11,6 +11,7 @@ export default function Choice({
 }) {
   const choiceGender = isMale ? "Male" : "Female";
   const choiceDifficulty = isBeginner ? "Beginner" : "Advanced";
+  console.log("dUFFECLTY:",choiceDifficulty)
   const genderIcon = isMale ? faPerson : faPersonDress;
   return (
     <div className="flex gap-4 m-8 w-2/5">

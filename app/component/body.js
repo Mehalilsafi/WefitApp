@@ -6,7 +6,7 @@ export default function body() {
   function handleClick(event){
     const muscleId=event.currentTarget.id
     router.push(`/${muscleId}`)
-    console.log("the muscle ckiked Id : ",muscleId)
+   
   }
   return (
     <div className="flex flex-col gap-8  justify-center items-center w-full md:flex-row  text-slate-200 ">

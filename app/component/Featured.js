@@ -3,18 +3,22 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
-
+import { useFeature } from "@/utils/stor";
 export default function Featured() {
   const [isFeaturdOpen, setFeatured] = React.useState(false);
-
+  function handleClick(feature){
+ 
+ console.log("cliked feature :",feature)
+  }
   let FeaturedArr = ["STRETCHES", "BODYWEIGHT", "BARBEL", "CABLES", "FEATURED"];
-  let Featured = FeaturedArr.map((featur, index) => {
+  let Featured = FeaturedArr.map((feature, index) => {
     return (
       <li
         className="flex justify-center items-center rounded w-full bg-[#D9D9D9] md:w-2/5 transition duration-300 ease-in-out hover:bg-[#A2FF86]  p-5"
         key={index}
+        onClick={() => handleClick(feature)}
       >
-        {featur}
+        {feature}
       </li>
     );
   });
