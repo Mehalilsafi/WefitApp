@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPerson, faPersonDress } from "@fortawesome/free-solid-svg-icons";
-
+import { useDifficulty } from "@/utils/stor";
 export default function Choice({
   isMale,
   isBeginner,
@@ -11,7 +11,9 @@ export default function Choice({
 }) {
   const choiceGender = isMale ? "Male" : "Female";
   const choiceDifficulty = isBeginner ? "Beginner" : "Advanced";
+  const addDifficulty =useDifficulty((state)=>state.addDifficulty)
   console.log("dUFFECLTY:",choiceDifficulty)
+  addDifficulty(choiceDifficulty)
   const genderIcon = isMale ? faPerson : faPersonDress;
   return (
     <div className="flex gap-4 m-8 w-2/5">
