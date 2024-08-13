@@ -6,9 +6,10 @@ import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
 import { useFeature } from "@/utils/stor";
 export default function Featured() {
   const [isFeaturdOpen, setFeatured] = React.useState(false);
+  const addFeature = useFeature((state) => state.addFeature);
   function handleClick(feature){
- 
- console.log("cliked feature :",feature)
+    addFeature(feature);
+  console.log("cliked feature :",feature)
   }
   let FeaturedArr = ["STRETCHES", "BODYWEIGHT", "BARBEL", "CABLES", "FEATURED"];
   let Featured = FeaturedArr.map((feature, index) => {
