@@ -9,7 +9,7 @@ export default function body() {
    
   }
   return (
-    <div className="flex flex-col gap-8  justify-center items-center w-full md:flex-row  text-slate-200 ">
+    <div className="flex flex-col gap-8  justify-center items-center w-full md:flex-row  text-slate-200  ">
       <svg
         height="100%"
         viewBox="0 0 673 1200"

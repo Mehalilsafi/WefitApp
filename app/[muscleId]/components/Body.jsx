@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 
 export default function body({ muscleId }) {
   return (
-    <div className="md:flex flex-col gap-8  justify-center items-center w-full md:flex-row  text-slate-200  hidden ">
+    <div className="flex  gap-8  justify-center items-center w-full mflex-row  text-slate-200 bg-primary">
       <svg
         height="100%"
         viewBox="0 0 673 1200"
