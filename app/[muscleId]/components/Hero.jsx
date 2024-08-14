@@ -3,6 +3,7 @@ import React from "react";
 import { useFeature } from "@/utils/stor";
 import { useDifficulty } from "@/utils/stor";
 import Body from "./Body";
+import Box from "./Box";
 export default function Hero({ params }) {
   const { muscleId } = params;
   const feature=useFeature((state)=>state.feature)
@@ -13,6 +14,7 @@ export default function Hero({ params }) {
   return (
     <div className="mr-7 ml-7">
       <Body  muscleId={muscleId}/>
+      <Box muscleId={muscleId}/>
 
     </div>
   );
