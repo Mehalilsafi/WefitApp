@@ -16,7 +16,7 @@ export default function Choice({
   addDifficulty(choiceDifficulty)
   const genderIcon = isMale ? faPerson : faPersonDress;
   return (
-    <div className="flex gap-4 m-8 w-2/5">
+    <div className="flex md:flex-col lg:flex-row gap-4 m-8 w-2/5">
       <div
         className="flex justify-center border-2 border-[#A2FF86] p-2 w-36 gap-4 bg-[#F9F9F9] rounded-xl transition duration-300 ease-in-out hover:bg-[#A2FF86] hover:cursor-pointer"
         onClick={() => handleClikGender()}

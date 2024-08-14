@@ -7,11 +7,18 @@ import { useFeature } from "@/utils/stor";
 export default function Featured() {
   const [isFeaturdOpen, setFeatured] = React.useState(false);
   const addFeature = useFeature((state) => state.addFeature);
-  function handleClick(feature){
+  function handleClick(feature) {
     addFeature(feature);
-  console.log("cliked feature :",feature)
+    console.log("cliked feature :", feature);
   }
-  let FeaturedArr = ["STRETCHES", "BODYWEIGHT", "BARBEL", "CABLES", "FEATURED"];
+  let FeaturedArr = [
+    "cardio",
+    "strength",
+    "powerlifting",
+    "CABLES",
+    "stretching",
+    "strongman",
+  ];
   let Featured = FeaturedArr.map((feature, index) => {
     return (
       <li
