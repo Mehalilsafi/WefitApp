@@ -1,6 +1,6 @@
-"use server";
+
 export default async function ({ muscleId, feature, difficulty }) {
-  const url = `https://api.api-ninjas.com/v1/exercises?muscle=${muscleId}&difficulty=${difficulty}&equipment=${feature}`;
+  const url = `https://api.api-ninjas.com/v1/exercises?muscle=${muscleId}&difficulty=${difficulty}&type=${feature}`;
   try {
     const response = await fetch(url, {
       method: "GET",
@@ -10,7 +10,9 @@ export default async function ({ muscleId, feature, difficulty }) {
       throw new Error(`responsestatus :${response.status}`);
     }
     const data = await response.json();
+    console.log('fuction data log ',data)
   } catch (error) {
     console.log(error.message);
   }
+
 }
