@@ -28,7 +28,7 @@ export default function Hero({ params }) {
     <div className="bg-primary">
       <div className="mr-7 ml-7 ">
         <Body className='hidden md:flex' muscleId={muscleId} />
-        <Box muscleId={muscleId}  />
+        <Box muscleId={muscleId} data={data} />
       </div>
     </div>
   );
