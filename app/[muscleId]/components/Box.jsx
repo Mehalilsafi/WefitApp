@@ -2,7 +2,7 @@
 import React from "react";
 import { useFeature } from "@/utils/stor";
 import { useDifficulty } from "@/utils/stor";
-export default function Box({ muscleId }) {
+export default function Box({ muscleId,data }) {
   const dataObject = [
     {
       id: 1,
