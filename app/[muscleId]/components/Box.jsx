@@ -6,19 +6,19 @@ export default function Box({ muscleId,data }) {
 
 
 
-
   const dataObject = [
     {
       id: 1,
-        name: "arlondPress",
-      description: "dddddddsqgfvqfsrfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsgvsfvq",
+      name: "Arnold Press",
+      description: "A shoulder exercise that targets the deltoids, enhancing muscle size and strength.",
     },
     {
       id: 2,
-      name: "frontRaise",
-      description: "dddddddsqgfvqfsrfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsgvsfvq",
+      name: "Front Raise",
+      description: "An exercise focusing on the front deltoids, helping to build shoulder strength and definition.",
     },
   ];
+  
   return (
     <div className="mt-6">
       <h1 className="text-2xl font-extrabold text-white">{muscleId}</h1>
