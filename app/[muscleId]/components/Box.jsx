@@ -1,12 +1,16 @@
 "use client";
 import React from "react";
-import { useFeature } from "@/utils/stor";
+import { useFeature } from "@/utils/stor";   
 import { useDifficulty } from "@/utils/stor";
 export default function Box({ muscleId,data }) {
+
+
+
+
   const dataObject = [
     {
       id: 1,
-      name: "arlondPress",
+        name: "arlondPress",
       description: "dddddddsqgfvqfsrfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsgvsfvq",
     },
     {
