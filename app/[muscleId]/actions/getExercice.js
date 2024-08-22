@@ -1,18 +1,22 @@
-
 export default async function ({ muscleId, feature, difficulty }) {
-  const url = `https://api.api-ninjas.com/v1/exercises?muscle=${muscleId}&difficulty=${difficulty}&type=${feature}`;
+  const url = `https://work-out-api1.p.rapidapi.com/search?Muscles=${biceps}`;
   try {
     const response = await fetch(url, {
       method: "GET",
-      headers: { "X-Api-Key": "BFeDQxO0KxvGlQycrqBbZ4vNJO0zPBb3CHx08Iqd" },
+      headers:{
+        'x-rapidapi-host':'work-out-api1.p.rapidapi.com',
+        'x-rapidapi-key': '871eab5594msh5b3308f080680c1p154b18jsn6c4e532020d2'
+      },
     });
     if (!response.ok) {
-      throw new Error(`responsestatus :${response.status}`);
+      throw new Error(`Response status: ${response.status}`);
     }
+   
     const data = await response.json();
-    console.log('fuction data log ',data)
+    console.log('Function data log:', data);
+    return data; // Return the data from the function
   } catch (error) {
-    console.log(error.message);
+    console.error('Error:', error.message);
+    return []; // Return an empty array in case of error
   }
-
 }
