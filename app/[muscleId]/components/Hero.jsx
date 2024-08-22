@@ -6,6 +6,8 @@ import { useDifficulty } from "@/utils/stor";
 import Body from "./Body";
 import Box from "./Box";
 import getExercice from "../actions/getExercice";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 export default function Hero({ params }) {
   const { muscleId } = params;
   console.log('muscle in hero :',muscleId)
@@ -20,7 +22,7 @@ export default function Hero({ params }) {
     async function fetchData() {
       const fetchedData = await getExercice( muscleId, feature, difficulty );
       console.log("hero data log", fetchedData);
-      setData(fetchedData); // Store the fetched data in state
+     setData(fetchedData); 
     }
 
     fetchData();
@@ -29,7 +31,11 @@ export default function Hero({ params }) {
     <div className="bg-primary">
       <div className="mr-7 ml-7 ">
         <Body className='hidden md:flex' muscleId={muscleId} />
-        <Box muscleId={muscleId} data={data} difficulty={difficulty}/>
+        {data ? (
+          <Box muscleId={muscleId} data={data} difficulty={difficulty} />
+        ) : (
+          <Skeleton count={5} height={200} />
+        )}
       </div>
     </div>
   );

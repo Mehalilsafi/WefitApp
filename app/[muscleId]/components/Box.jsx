@@ -29,7 +29,7 @@ export default function Box({ muscleId, data, difficulty }) {
                   {exo.Explaination}
                 </p>
                 {difficulty === "Beginner" ? (
-                  <p className="text-accent font-normal text-base">
+                  <p className="text-primary font-normal text-base">
                    {exo["Beginner Sets"]}
                   </p>
                 ) : (
