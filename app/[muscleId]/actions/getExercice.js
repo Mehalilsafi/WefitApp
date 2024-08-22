@@ -3,9 +3,9 @@ export default async function ( muscleId, feature, difficulty ) {
 
   let url = `https://work-out-api1.p.rapidapi.com/search?Muscles=${muscleId}`;
 
-  //if (feature) {
-  //  url += `&Equipment=${encodeURIComponent(feature)}`;
-  //}
+  if (feature) {
+    url += `&Equipment=${encodeURIComponent(feature)}`;
+  }
 
   //if (difficulty) {
   //  url += `&Intensity_Level=${encodeURIComponent(difficulty)}`;

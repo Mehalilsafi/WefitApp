@@ -16,7 +16,8 @@ export default function NavBar() {
   return (
     <nav className="flex flex-col md:flex-row md:items-center h-auto md:h-32 w-full bg-[#181818] text-[#DDD] ">
       <div className="flex justify-between items-center p-4 md:p-0 w-full md:w-1/12">
-        <Image src={logo} alt="logo image" width={180} />
+      <Link href="/"><Image src={logo} alt="logo image" width={180} /></Link>
+      
         <div className="md:hidden">
           <FontAwesomeIcon icon={faBars} className="w-7" onClick={toggleMenu} />
         </div>
