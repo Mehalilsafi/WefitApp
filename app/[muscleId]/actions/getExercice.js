@@ -1,6 +1,7 @@
 export default async function ( muscleId, feature, difficulty ) {
-  console.log("muscle ",muscleId)
-  const url = `https://work-out-api1.p.rapidapi.com/search?Muscles=${muscleId}`;
+  console.log("muscle ",difficulty)
+
+  const url = `https://work-out-api1.p.rapidapi.com/search?Muscles=${muscleId}&Equipment=${feature}&Intensity_Level=${difficulty}`;
   try {
     const response = await fetch(url, {
       method: "GET",
