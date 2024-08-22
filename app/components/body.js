@@ -17,7 +17,7 @@ export default function body() {
         xmlns="http://www.w3.org/2000/svg"
         className="w-4/12"
       >
-        <g   className="body-map__muscle" id="abdominals" onClick={handleClick} >
+        <g   className="body-map__muscle" id="Abs" onClick={handleClick} >
           <path className=" hover:fill-red-500"
             d="M384.32 490.61C386.41 457.79 388.65 408.87 388.74 397.67C388.79 
         392.09 388.67 389.6 388.58 387.74L388.56 387.35C388.5 385.83 388.44 384.62 
@@ -133,7 +133,7 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g className="body-map__muscle" id="obliques" onClick={handleClick}>
+        <g className="body-map__muscle" id="Abs" onClick={handleClick}>
           <path  className=" hover:fill-red-500"
             d="M278.25 405.1L278.22 405.27L278.23 405.26L278.2 405.42L278.181 
         405.528C275.415 420.952 272.286 438.408 274.68 454.63C279.61 488.3 267.94 
@@ -178,9 +178,9 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g className="body-map__muscle" id="forearms" onClick={handleClick}>
+        <g className="body-map__muscle" id="forearms" >
           <path
-           className=" hover:fill-red-500"
+           className=""
             d="M135.05 418.55C141.32 418.55 148.19 416.1 154.92 
         411.47V411.46C155.1 411.34 155.33 411.37 155.48 411.52C155.63 411.67 
         155.65 411.91 155.52 412.08C151.51 417.52 146.59 424.21 144.16 
@@ -201,7 +201,7 @@ export default function body() {
             fill="currentColor"
           ></path>
           <path
-           className=" hover:fill-red-500"
+         
             d="M638.96 515.58C640.01 517.47 640.88 519.19 641.61 520.78C641.64 
         520.86 641.65 520.94 641.64 521.03C640.5 527.9 636.8 533.65 631.99 
         536.05C630.02 537.04 627.7 537.53 625.21 537.53C622.42 537.53 619.4 536.92 
@@ -223,7 +223,7 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g className="body-map__muscle" id="biceps" onClick={handleClick}>
+        <g className="body-map__muscle" id="Biceps" onClick={handleClick}>
           <path
            className=" hover:fill-red-500"
             d="M207.71 345.02C207.68 345.12 207.61 345.21 207.52 
@@ -264,7 +264,7 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g className="body-map__muscle" id="shoulders" onClick={handleClick}>
+        <g className="body-map__muscle" id="Shoulders" onClick={handleClick}>
           <path
            className=" hover:fill-red-500"
             d="M152.89 303.71C152.83 303.75 152.75 303.77 152.68 
@@ -306,7 +306,7 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g className="body-map__muscle" id="traps" onClick={handleClick}>
+        <g className="body-map__muscle" id="Trapezius" onClick={handleClick}>
           <path
           className=" hover:fill-red-500"
             d="M395.89 217.17C395.84 217.17 395.75 217.15 395.75 
@@ -339,7 +339,7 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g className="body-map__muscle" id="chest" onClick={handleClick}>
+        <g className="body-map__muscle" id="Chest" onClick={handleClick}>
           <path
     className=" hover:fill-red-500"
             d="M277.532 219.782C277.578 219.768 277.624 219.754 277.67 
@@ -395,7 +395,7 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g className="body-map__muscle" id="quads" onClick={handleClick}>
+        <g className="body-map__muscle" id="Quadriceps" onClick={handleClick}>
           <path
            className=" hover:fill-red-500"
             d="M458.96 792.3L458.82 793.02L458.79 793.01C455.7 808.78 452.78 
@@ -442,7 +442,7 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g className="body-map__muscle" id="calves" onClick={handleClick}>
+        <g className="body-map__muscle" id="Calves" onClick={handleClick}>
           <path
           className=" hover:fill-red-500"
             d="M213.13 880.79C213.65 879.35 214.06 878.18 214.36 877.22C219.58 
@@ -1176,7 +1176,7 @@ export default function body() {
         xmlns="http://www.w3.org/2000/svg"
         className="w-4/12"
       >
-        <g id="hamstrings" className="body-map__muscle" onClick={handleClick}>
+        <g id="Hamstring" className="body-map__muscle" onClick={handleClick}>
           <path
           className=" hover:fill-red-500"
             d="M445.184 807.888C446.787 801.789 448.155 795.533 449.322 
@@ -1231,7 +1231,7 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g id="lowerback" className="body-map__muscle" onClick={handleClick}>
+        <g id="Back" className="body-map__muscle" onClick={handleClick}>
           <path
                     className=" hover:fill-red-500"
             d="M378.772 505.052C366.957 502.464 351.674 502.97 340.251 
@@ -1246,7 +1246,7 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g id="glutes" className="body-map__muscle" onClick={handleClick}>
+        <g id="Glutes" className="body-map__muscle" onClick={handleClick}>
           <path
            className=" hover:fill-red-500"
             d="M323.861 612.416V552.278H323.852C323.852 534.442 318.807 521.651 
@@ -1288,7 +1288,7 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g id="lats" className="body-map__muscle" onClick={handleClick}>
+        <g id="Lats" className="body-map__muscle" onClick={handleClick}>
           <path
                  className=" hover:fill-red-500"
             d="M454.007 309.662L454.036 309.519L454.028 309.502L454.04 
@@ -1330,7 +1330,7 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g id="traps-middle" className="body-map__muscle" onClick={handleClick}>
+        <g id="Back" className="body-map__muscle" onClick={handleClick}>
           <path
           className=" hover:fill-red-500"
             d="M384.871 237.078C366.843 271.303 355.568 298.575 347.918 
@@ -1349,7 +1349,7 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g id="traps" className="body-map__muscle" onClick={handleClick}>
+        <g id="Trapezius" className="body-map__muscle" onClick={handleClick}>
           <path
         className=" hover:fill-red-500"
             d="M420.952 210.328C405.051 212.672 395.736 222.047 390.569 
@@ -1373,7 +1373,7 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g id="shoulders" className="body-map__muscle" onClick={handleClick}>
+        <g id="Shoulders" className="body-map__muscle" onClick={handleClick}>
           <path
                   className=" hover:fill-red-500"
             d="M229.447 251.746C239.028 244.299 248.146 237.211 256.961 
@@ -1399,7 +1399,7 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g id="calves" className="body-map__muscle" onClick={handleClick}>
+        <g id="Calves" className="body-map__muscle" onClick={handleClick}>
           <path
            className=" hover:fill-red-500"
             d="M450.943 1016.66C463.752 1015.89 466.915 989.158 468.309 
@@ -1440,7 +1440,7 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g id="triceps" className="body-map__muscle" onClick={handleClick}>
+        <g id="Triceps" className="body-map__muscle" onClick={handleClick}>
           <path
             className=" hover:fill-red-500"
             d="M542.641 384.976C545.908 385.951 549.629 387.032 550.814 
@@ -1487,9 +1487,9 @@ export default function body() {
             fill="currentColor"
           ></path>
         </g>
-        <g id="forearms" className="body-map__muscle" onClick={handleClick}>
+        <g id="forearms" className="body-map__muscle">
           <path
-               className=" hover:fill-red-500"
+             
             d="M622.044 548.592C626.462 546.884 630.339 541.622 632.265 
         534.755L632.256 534.738C631.786 534.041 631.333 533.283 630.914 
         532.29C630.183 530.547 628.649 525.79 626.34 518.575L626.117 
@@ -1508,7 +1508,7 @@ export default function body() {
             fill="currentColor"
           ></path>
           <path
-             className=" hover:fill-red-500"
+          
             d="M131.543 425.091C136.582 418.159 140.33 413.01 143.332 
         408.947C137.873 412.777 133.638 414.609 130.341 414.609C129.339 414.609 
         128.415 414.435 127.579 414.086C122.577 412.039 122.159 404.981 121.776 

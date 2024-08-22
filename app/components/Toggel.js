@@ -10,7 +10,7 @@ export default function Choice({
   handleClikeDuffeclty,
 }) {
   const choiceGender = isMale ? "Male" : "Female";
-  const choiceDifficulty = isBeginner ? "Beginner" : "Expert";
+  const choiceDifficulty = isBeginner ? "beginner" : "expert";
   const addDifficulty =useDifficulty((state)=>state.addDifficulty)
   console.log("dUFFECLTY:",choiceDifficulty)
   addDifficulty(choiceDifficulty)
