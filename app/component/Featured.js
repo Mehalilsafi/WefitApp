@@ -16,8 +16,6 @@ export default function Featured() {
     "Dumbbells",
     "EZ-bar",
     "Bench",
-    "stretching",
-    "strongman",
   ];
   let Featured = FeaturedArr.map((feature, index) => {
     return (

@@ -24,9 +24,9 @@ export default async function ( muscleId, feature, difficulty ) {
    
     const data = await response.json();
     console.log('Function data log:', data);
-    return data; // Return the data from the function
+    return data; 
   } catch (error) {
     console.error('Error:', error.message);
-    return []; // Return an empty array in case of error
+    return []; 
   }
 }
