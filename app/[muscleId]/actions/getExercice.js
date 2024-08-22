@@ -1,7 +1,15 @@
 export default async function ( muscleId, feature, difficulty ) {
   console.log("muscle ",difficulty)
 
-  const url = `https://work-out-api1.p.rapidapi.com/search?Muscles=${muscleId}&Equipment=${feature}&Intensity_Level=${difficulty}`;
+  let url = `https://work-out-api1.p.rapidapi.com/search?Muscles=${muscleId}`;
+
+  if (feature) {
+    url += `&Equipment=${encodeURIComponent(feature)}`;
+  }
+
+  if (difficulty) {
+    url += `&Intensity_Level=${encodeURIComponent(difficulty)}`;
+  }
   try {
     const response = await fetch(url, {
       method: "GET",
