@@ -12,10 +12,10 @@ export default function Featured() {
     console.log("cliked feature :", feature);
   }
   let FeaturedArr = [
-    "cardio",
-    "strength",
-    "powerlifting",
-    "CABLES",
+    "Barbell",
+    "Dumbbells",
+    "EZ-bar",
+    "Bench",
     "stretching",
     "strongman",
   ];

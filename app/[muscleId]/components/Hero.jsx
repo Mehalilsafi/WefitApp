@@ -8,6 +8,7 @@ import Box from "./Box";
 import getExercice from "../actions/getExercice";
 export default function Hero({ params }) {
   const { muscleId } = params;
+  console.log('muscle in hero :',muscleId)
   const feature = useFeature((state) => state.feature);
   const difficulty = useDifficulty((state) => state.difficulty);
   console.log(feature);
