@@ -1,8 +1,12 @@
 "use client";
 import React from "react";
-import getCalorie from "../actions/getCalorie";
 import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { calculateBMR } from "../actions/getCalorie";
+import { calculateDailyCalories } from "../actions/getCalorie";
 export default function Hero() {
+  const [dailyCalories, setDailyCalories] = useState(null);
   const [formData, setFormData] = useState({
     gender: "",
     weight: "",
@@ -18,56 +22,22 @@ export default function Hero() {
       [name]: value,
     }));
   }
-  function calculateBMR(gender, weight, height, age) {
-    let BMR;
+  function handleClick() {
+    const { gender, weight, height, age, activityLevel, goal } = formData;
 
-    if (gender === "male") {
-      BMR = 88.362 + 13.397 * weight + 4.799 * height - 5.677 * age;
-    } else if (gender === "female") {
-      BMR = 447.593 + 9.247 * weight + 3.098 * height - 4.33 * age;
+    if (!gender || !weight || !height || !age || !activityLevel || !goal) {
+      toast.error("Please fill out all fields before calculating.");
+      return;
     }
+    const BMR = calculateBMR(gender, weight, height, age);
+    const dailyCalories = calculateDailyCalories(BMR, activityLevel, goal);
 
-    return BMR;
+    setDailyCalories(dailyCalories);
+    toast.success(
+      `Your daily caloric need is ${Math.round(dailyCalories)} calories.`
+    );
+    console.log("daily calris :", dailyCalories);
   }
-  function calculateDailyCalories(BMR, activityLevel, goal) {
-    let multiplier;
-
-    switch (activityLevel) {
-      case "sedentary":
-        multiplier = 1.2;
-        break;
-      case "light":
-        multiplier = 1.375;
-        break;
-      case "moderate":
-        multiplier = 1.55;
-        break;
-      case "active":
-        multiplier = 1.725;
-        break;
-      case "very active":
-        multiplier = 1.9;
-        break;
-      default:
-        multiplier = 1.2;
-    }
-    let dailyCalories = BMR * multiplier;
-    if (goal === "lose") {
-      dailyCalories -= 500;
-    } else if (goal === "gain") {
-      dailyCalories += 500;
-    }
-    return dailyCalories;
-  }
-  const gender = formData.gender; // or "female"
-  const weight = formData.weight; // in kg
-  const height = formData.height; // in cm
-  const age = formData.age; // in years
-  const activityLevel = formData.activityLevel;
-  const goal = formData.goal;
-  const BMR = calculateBMR(gender, weight, height, age);
-  const dailyCalories = calculateDailyCalories(BMR, activityLevel, goal);
-
   return (
     <div className="flex justify-center items-center w-full flex-col ">
       <form action="">
@@ -145,11 +115,19 @@ export default function Hero() {
           <button
             type="button"
             className="flex justify-center  py-3 px-4  items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+            onClick={handleClick}
           >
             calculate
           </button>
+          {dailyCalories && (
+            <div className="mt-4 text-lg ">
+              <p> Your daily caloric need is {Math.round(dailyCalories)}</p>
+              calories.
+            </div>
+          )}
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 }
