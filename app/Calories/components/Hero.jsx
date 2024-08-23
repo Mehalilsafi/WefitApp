@@ -49,7 +49,7 @@ export default async function Hero() {
   const height = 175; // in cm
   const age = 25; // in years
   const activityLevel = "moderate";
-  const goal = "lose"
+  const al = "lose"
   const BMR = calculateBMR(gender, weight, height, age);
   const dailyCalories = calculateDailyCalories(BMR, activityLevel, goal);
 
