@@ -12,11 +12,11 @@ export async function meals() {
       });
   
       const data = await response.json();
-      console.log("**********************");
-      console.log("recipes data ", data);
-      console.log("**********************");
+      return data;  
     } catch (error) {
       console.error("Error fetching recipes:", error);
+      throw error;  
     }
   }
+  
   
