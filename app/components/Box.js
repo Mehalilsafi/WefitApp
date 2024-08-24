@@ -18,7 +18,7 @@ export default function box() {
     {
       boxTitle: "Meals Plans",
       boxText: "Plans built with registered dietitians and nutritionists.",
-      path:""
+      path:"Meals"
     },
     {
       boxTitle: "Calories Calculator",
