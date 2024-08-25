@@ -31,11 +31,11 @@ export default function Allergies() {
   }
 
   return (
-    <div className="flex gap-4 overflow-hidden ">
+     <div className="flex gap-4 overflow-hidden ">
       {data.map((item, index) => (
         <div
           key={index}
-          className="flex gap-1 items-center bg-accent rounded-xl p-1"
+          className="flex gap-1 items-center bg-accent rounded-xl p-1 h-16"
           onClick={() => handleIconClick(item)}
         >
           <FontAwesomeIcon
