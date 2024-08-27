@@ -40,7 +40,7 @@ export default function Allergies() {
         >
           <FontAwesomeIcon
             icon={selectedItems.includes(item) ? faCheck : faPlus}
-            className="p-1 bg-four text-primary rounded-full font-medium"
+            className= {selectedItems.includes(item)? "p-1 bg-four text-secondary rounded-full font-medium":"p-1 bg-four text-primary rounded-full font-medium"}
           />
           <p className="text-gray-400 w-full">{item}</p>
         </div>
