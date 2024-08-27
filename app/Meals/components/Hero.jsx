@@ -5,7 +5,7 @@ import { meals } from "../actions/getMeals";
 import Allergies from "./Allergies";
 import Calories from "./Calories";
 import Diets from "./Diets";
-import Nutrients from "./Nutrients";
+import Nutrients from "./Nuntrients";
 import Search from "./Search";
 export default function Hero() {
   const [selectedChoice, setSelectedChoice] = useState("");
