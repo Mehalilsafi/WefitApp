@@ -8,6 +8,7 @@ import Diets from "./Diets";
 import Nutrients from "./Nuntrients";
 import Search from "./Search";
 export default function Hero() {
+  const [hoveredChoice, setHoveredChoice] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState("");
 
   const [data, setData] = useState(null);
@@ -37,27 +38,45 @@ export default function Hero() {
   function handleClick(choice) {
     setSelectedChoice(choice);
   }
+  function handleMouseEnter(index) {
+    setHoveredChoice(index);
+  }
   return (
-    <div className="grid grid-cols-4 bg-slate-300 m-7">
-      <div className="flex flex-col gap-3 col-span-4 md:col-span-1  bg-slate-400 p-4">
-        <p>Choose one or more methods</p>
-        {choiceList.map((choice) => (
-          <p key={choice.label} onClick={() => handleClick(choice.label)}>
+    <div className="grid grid-cols-4 m-7 h-96 rounded-2xl shadow-custom-light">
+      <div className="flex flex-col gap-7 col-span-4 md:col-span-1  p-4">
+        <p className="text-accent text-sm ">
+          Choose{" "}
+          <span className="font-medium text-base text-slate-500">
+            one or more{" "}
+          </span>
+          methods
+        </p>
+        {choiceList.map((choice,index) => (
+          <p
+            key={choice.label}
+            className={`text-lg font-medium border-b-2 ${
+              hoveredChoice === index
+                ? "text-secondary border-secondary"
+                : "border-transparent"
+            } transition-all duration-300 hover:text-secondary hover:border-secondary w-[210px]`}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onClick={() => handleClick(choice.label)}
+          >
             {choice.label}
           </p>
         ))}
       </div>
-      <div className="col-span-4 md:col-span-2 bg-slate-200 p-4">
+      <div className="col-span-4 md:col-span-2 border-l border-solid border-accent p-4 ">
         {choiceList
           .filter((choice) => choice.label === selectedChoice)
           .map((choice) => (
             <div key={choice.label}>{choice.component}</div>
           ))}
       </div>
-      <div className="col-span-4 md:col-span-1  bg-slate-600 p-4">
+      <div className="col-span-4 md:col-span-1 border-l border-solid border-accent p-4 bg-slate-50">
         <button
           type="button"
-          className="py-3 px-4 m-auto mt-5 flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-800 text-gray-800 hover:border-gray-500 hover:text-gray-500 focus:outline-none focus:border-gray-500 focus:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:border-white dark:text-white dark:hover:text-neutral-300 dark:hover:border-neutral-300  "
+          className="py-3 px-4 m-auto mt-5 flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg hover:text-gray-500 focus:outline-none focus:border-gray-500 focus:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:border-white dark:text-white dark:hover:text-neutral-300 dark:hover:border-neutral-300 bg-secondary text-white w-[210px]"
         >
           Search
         </button>
