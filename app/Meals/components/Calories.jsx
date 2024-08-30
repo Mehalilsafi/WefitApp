@@ -8,6 +8,11 @@ export default function Calories() {
   function handleClick() {
     setSelected((prev) => !prev);
   }
+  const [calorie,setCalorie]=useState("")
+  function handleChange(event) {
+    setCalorie(event.target.value);
+    console.log(calorie)
+  }
   return (
     <div className="">
       <p className="mb-10 border-b border-solid border-accent text-accent">
@@ -15,7 +20,12 @@ export default function Calories() {
         default serving is 100g.
       </p>
       <div className="flex justify-start items-center gap-3">
-        <input type="text" className="w-32 h-10 rounded border border-solid border-gray-300 " />
+        <input
+          type="text"
+          className="w-32 h-10 rounded border border-solid border-gray-300 "
+          value={calorie}
+          onChange={handleChange}
+        />
         <p className="font-medium text-lg">kcal</p>
         <FontAwesomeIcon
           icon={selected ? faPlus : faCheck}
