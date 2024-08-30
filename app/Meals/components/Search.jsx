@@ -1,7 +1,13 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 export default function Search() {
+  const [search, setSearch] = useState("");
+  function handleChange(event) {
+    setSearch(event.target.value);
+  }
   return (
     <div>
       <p className="text-base text-accent ">
@@ -16,6 +22,9 @@ export default function Search() {
             type="text"
             class="py-3 px-4 block w-full border border-solid border-gray-200 rounded-l-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
             placeholder="type one or more keywords  "
+            name="search"
+            onChange={handleChange}
+            value={search}
           />
 
           <FontAwesomeIcon
