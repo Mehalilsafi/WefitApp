@@ -43,7 +43,7 @@ export default function Hero() {
   }
   return (
     <div className="grid grid-cols-4 h-96 mr-9 ml-9 mt-[150px] mb-[150px] rounded-2xl shadow-custom-light">
-      <div className="flex flex-col gap-7 col-span-4 md:col-span-1  p-4">
+      <div className="flex flex-col gap-7 col-span-4 md:col-span-1 p-4">
         <p className="text-accent text-sm ">
           Choose{" "}
           <span className="font-medium text-base text-slate-500">
@@ -51,7 +51,7 @@ export default function Hero() {
           </span>
           methods
         </p>
-        {choiceList.map((choice,index) => (
+        {choiceList.map((choice, index) => (
           <p
             key={choice.label}
             className={`text-lg font-medium border-b-2 ${
@@ -67,11 +67,13 @@ export default function Hero() {
         ))}
       </div>
       <div className="col-span-4 md:col-span-2 border-l border-solid border-accent p-4 ">
-        {choiceList
-          .filter((choice) => choice.label === selectedChoice)
-          .map((choice) => (
-            <div key={choice.label}>{choice.component}</div>
-          ))}
+        {selectedChoice === "" ? (
+          <div>{choiceList[0].component}</div>
+        ) : (
+          choiceList
+            .filter((choice) => choice.label === selectedChoice)
+            .map((choice) => <div key={choice.label}>{choice.component}</div>)
+        )}
       </div>
       <div className="col-span-4 md:col-span-1 border-l border-solid border-accent p-4 bg-slate-50">
         <button
