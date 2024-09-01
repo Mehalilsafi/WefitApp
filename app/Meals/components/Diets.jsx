@@ -2,10 +2,10 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faCheck } from "@fortawesome/free-solid-svg-icons";
-import { useStor } from "@/utils/stor";
+import { useStore } from "@/utils/stor";
 export default function Diets() {
   const [selectedItems, setSelectedItems] = useState([]);
-
+  const addDiets = useStore((state) => state.addDiets);
   const data = [
     "celery-free",
     "crustacean-free",
@@ -29,6 +29,7 @@ export default function Diets() {
         ? prevSelectedItems.filter((i) => i !== item)
         : [...prevSelectedItems, item]
     );
+    addDiets(selectedItems);
   }
   return (
     <div className="grid grid-cols-3 items-center gap-4  ">

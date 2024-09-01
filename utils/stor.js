@@ -23,19 +23,23 @@ const useFeature = create(
     }
   )
 );
-const useStor=create(
+const useStore = create(
   persist(
     (set) => ({
       choice: {
-        
+        diets: [],
+        allergies: [],
+        search: [],
+        calories: [],
+        nutrients:[],
       },
-      addChoice: () => set({ }),
+      addDiets: (item) => set({ choice: "" }),
     }),
     {
-      name:"choice-storage"
+      name: "choice-storage",
     }
   )
-)
-export{useStor}
+);
+export { useStore };
 export { useDifficulty };
 export { useFeature };
