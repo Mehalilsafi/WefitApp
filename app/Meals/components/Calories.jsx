@@ -2,16 +2,31 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faCheck } from "@fortawesome/free-solid-svg-icons";
-
+import { useStore } from "@/utils/stor";
 export default function Calories() {
   const [selected, setSelected] = useState(true);
+  const [calorie, setCalorie] = useState("");
+  const addCalories = useStore((state) => state.addCalories);
   function handleClick() {
-    setSelected((prev) => !prev);
+    setSelected((prev) => {
+      const newSelected = !prev;
+
+      if (newSelected) {
+        addCalories(calorie); 
+        console.log("Calorie after select:", calorie);
+      } else {
+        console.log("Selection was deselected");
+      }
+
+      console.log("New selected state:", newSelected); 
+
+      return newSelected;
+    });
   }
-  const [calorie,setCalorie]=useState("")
+  console.log("calrie after select :",calorie)
   function handleChange(event) {
     setCalorie(event.target.value);
-    console.log(calorie)
+    console.log(calorie);
   }
   return (
     <div className="">
