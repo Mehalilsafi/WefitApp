@@ -31,9 +31,17 @@ const useStore = create(
         allergies: [],
         search: [],
         calories: [],
-        nutrients:[],
+        nutrients: [],
       },
-      addDiets: (item) => set({ choice: "" }),
+      addDiets: (item) =>
+        set((state) => ({
+          choice: {
+            ...state.choice,
+            diets: state.choice.diets.includes(item)
+              ? state.choice.diets.filter((i) => i !== item)
+              : [...state.choice.diets, item],
+          },
+        })),
     }),
     {
       name: "choice-storage",
