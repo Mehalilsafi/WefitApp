@@ -37,9 +37,9 @@ const useStore = create(
         set((state) => ({
           choice: {
             ...state.choice,
-            diets: state.choice.diets.includes(item)
-              ? state.choice.diets.filter((i) => i !== item)
-              : [...state.choice.diets, item],
+            diets: (state.choice.diets ?? []).includes(item)
+              ? (state.choice.diets ?? []).filter((i) => i !== item)
+              : [...(state.choice.diets ?? []), item],
           },
         })),
 
@@ -65,11 +65,12 @@ const useStore = create(
         set((state) => ({
           choice: {
             ...state.choice,
-            calories: state.choice.calories.includes(item)
-              ? state.choice.calories.filter((i) => i !== item)
-              : [...state.choice.calories, item],
+            calories: (state.choice.calories ?? []).includes(item)
+              ? (state.choice.calories ?? []).filter((i) => i !== item)
+              : [...(state.choice.calories ?? []), item],
           },
         })),
+
       addNutrients: (item) =>
         set((state) => ({
           choice: {

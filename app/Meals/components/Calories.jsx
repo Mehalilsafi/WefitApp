@@ -11,7 +11,7 @@ export default function Calories() {
     setSelected((prev) => {
       const newSelected = !prev;
 
-      if (newSelected) {
+      if (!newSelected) {
         addCalories(calorie); 
         console.log("Calorie after select:", calorie);
       } else {

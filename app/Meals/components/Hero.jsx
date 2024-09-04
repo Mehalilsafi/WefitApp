@@ -7,10 +7,14 @@ import Calories from "./Calories";
 import Diets from "./Diets";
 import Nutrients from "./Nuntrients";
 import Search from "./Search";
+import { useStore } from "@/utils/stor";
 export default function Hero() {
   const [hoveredChoice, setHoveredChoice] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState("");
-
+  const calorie = useStore((state) => state.choice.calories);
+  const diet=useStore((state)=> state.choice.diets) 
+  console.log("diet afet bind in hero :", diet);
+  console.log("calorie afet bind in hero :", calorie);
   const [data, setData] = useState(null);
 
   useEffect(() => {
