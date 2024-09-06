@@ -42,16 +42,16 @@ const useStore = create(
               : [...(state.choice.diets ?? []), item],
           },
         })),
+
+        addAllergies: (item) =>
         set((state) => ({
           choice: {
             ...state.choice,
-            allergies: (state.choice.allergies ?? []).includes(item)
-              ? (state.choice.allergies ?? []).filter((i) => i !== item)
-              : [...(state.choice.allergies ?? []), item],
+            allergies: state.choice.allergies.includes(item)
+              ? state.choice.allergies.filter((i) => i !== item)
+              : [...state.choice.allergies, item],
           },
         })),
-
-      
       addSearch: (item) =>
         set((state) => ({
           choice: {
